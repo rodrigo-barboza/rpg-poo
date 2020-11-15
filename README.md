@@ -3,3 +3,4 @@
 
 
 ## Rodrigo: classe Personagem
+## João Paulo: classe Raca
