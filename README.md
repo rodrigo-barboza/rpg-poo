@@ -5,3 +5,6 @@
 ## Rodrigo: classe Personagem
 ## João Paulo: classe Raca
 ## Edson Jr: classe Assasino
+## Paulo Cesar: classe Guerreiro
+## Francisco Luan: classe Mago
+
