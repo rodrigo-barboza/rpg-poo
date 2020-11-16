@@ -7,7 +7,7 @@ public class Assassino extends Raca implements Combate, Constantes{
     private int retaDaMorte;
     private int energia;
     
-    public Assasino()
+    public Assassino()
     {
         super.setAtributo("Energia");
         super.setVida(200);
@@ -21,4 +21,14 @@ public class Assassino extends Raca implements Combate, Constantes{
         this.retaDaMorte = 35;
         this.energia = 120;
     } 
+    
+    @Override
+    public void usarHabilidadeEspecial (int danoHabilidadeEspecial, int vidaInimigo){
+        
+    }
+    
+    @Override
+    public void usarAtaqueBasico (int vidaInimigo){
+        
+    }
 }

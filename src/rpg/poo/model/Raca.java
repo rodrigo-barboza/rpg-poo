@@ -29,7 +29,7 @@ public abstract class Raca extends Personagem{
     public void setVida(int vida) {
         this.vida = vida;
     }
-
+    
     public int getResistenciaMagica() {
         return resistenciaMagica;
     }
@@ -77,7 +77,4 @@ public abstract class Raca extends Personagem{
     public void setVelocidadeDeAtaque(int velocidadeDeAtaque) {
         this.velocidadeDeAtaque = velocidadeDeAtaque;
     }
-        
-        
-        
 }
