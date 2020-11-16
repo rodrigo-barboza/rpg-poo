@@ -7,7 +7,7 @@ public class Assassino extends Raca implements Combate, Constantes{
     private int retaDaMorte;
     private int energia;
     
-    public Assasino(String atributo, int vida, int resistenciaMagica, int armadura, int tenacidade, int danoDeHabilidade, int poderDeHabilidade, int velocidadeDeAtaque, int laminaNoturna, int retaDaMorte, int energia)
+    public Assasino()
     {
         super.getAtributo("Energia");
         super.getVida(200);
