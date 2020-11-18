@@ -2,20 +2,20 @@ package rpg.poo.model;
 import rpg.poo.controller.Combate;
 import rpg.poo.controller.Constantes;
 
-public class Guerreiro extends Raca implements Constantes, Combate{
+public class Guerreiro extends Personagem implements Constantes, Combate{
     private int escudoDePedra;
     private int investidaMilagrosa;
     private int furia;
     
     public Guerreiro (){
-        super.setArmadura(12);
-        super.setAtributo("Resistência");
-        super.setDanoDeHabilidade(35);
-        super.setPoderDeHabilidade(0);
-        super.setResistenciaMagica(30);
-        super.setTenacidade(45);
-        super.setVelocidadeDeAtaque(10);
-        super.setVida(300);
+        raca.setArmadura(12);
+        raca.setAtributo("Resistência");
+        raca.setDanoDeHabilidade(35);
+        raca.setPoderDeHabilidade(0);
+        raca.setResistenciaMagica(30);
+        raca.setTenacidade(45);
+        raca.setVelocidadeDeAtaque(10);
+        raca.setVida(300);
         escudoDePedra = 20;
         investidaMilagrosa = 30;
         furia = 40;

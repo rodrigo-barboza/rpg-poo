@@ -2,21 +2,21 @@ package rpg.poo.model;
 import rpg.poo.controller.Combate;
 import rpg.poo.controller.Constantes;
 
-public class Assassino extends Raca implements Combate, Constantes{
+public class Assassino extends Personagem implements Combate, Constantes{
     private int laminaNoturna;
     private int retaDaMorte;
     private int energia;
     
     public Assassino()
     {
-        super.setAtributo("Energia");
-        super.setVida(200);
-        super.setResistenciaMagica(15);
-        super.setArmadura(20);
-        super.setTenacidade(10);
-        super.setDanoDeHabilidade(40);
-        super.setPoderDeHabilidade(10);
-        super.setVelocidadeDeAtaque(20);
+        raca.setAtributo("Energia");
+        raca.setVida(200);
+        raca.setResistenciaMagica(15);
+        raca.setArmadura(20);
+        raca.setTenacidade(10);
+        raca.setDanoDeHabilidade(40);
+        raca.setPoderDeHabilidade(10);
+        raca.setVelocidadeDeAtaque(20);
         this.laminaNoturna = 45;
         this.retaDaMorte = 35;
         this.energia = 120;

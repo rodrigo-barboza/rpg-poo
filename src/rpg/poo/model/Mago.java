@@ -2,20 +2,20 @@ package rpg.poo.model;
 import rpg.poo.controller.Combate;
 import rpg.poo.controller.Constantes;
 
-public class Mago extends Raca implements Combate, Constantes{
+public class Mago extends Personagem implements Combate, Constantes{
     private int impetoGlorioso;
     private int outraDimensao;
     private int mana;
     
     public Mago(){
-        super.setArmadura(10);
-        super.setAtributo("Mana");
-        super.setDanoDeHabilidade(40);
-        super.setPoderDeHabilidade(100);
-        super.setResistenciaMagica(20);
-        super.setTenacidade(0);
-        super.setVelocidadeDeAtaque(5);
-        super.setVida(175);
+        raca.setArmadura(10);
+        raca.setAtributo("Mana");
+        raca.setDanoDeHabilidade(40);
+        raca.setPoderDeHabilidade(100);
+        raca.setResistenciaMagica(20);
+        raca.setTenacidade(0);
+        raca.setVelocidadeDeAtaque(5);
+        raca.setVida(175);
         impetoGlorioso = 60;
         outraDimensao = 80;
         mana = 100;
