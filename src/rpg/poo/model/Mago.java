@@ -8,6 +8,8 @@ public class Mago extends Personagem implements Combate, Constantes{
     private int mana;
     
     public Mago(){
+        raca = new Raca();
+        
         raca.setArmadura(10);
         raca.setAtributo("Mana");
         raca.setDanoDeHabilidade(40);
@@ -16,6 +18,7 @@ public class Mago extends Personagem implements Combate, Constantes{
         raca.setTenacidade(0);
         raca.setVelocidadeDeAtaque(5);
         raca.setVida(175);
+        
         impetoGlorioso = 60;
         outraDimensao = 80;
         mana = 100;

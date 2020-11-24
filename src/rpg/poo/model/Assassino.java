@@ -7,8 +7,9 @@ public class Assassino extends Personagem implements Combate, Constantes{
     private int retaDaMorte;
     private int energia;
     
-    public Assassino()
-    {
+    public Assassino(){
+        raca = new Raca();
+        
         raca.setAtributo("Energia");
         raca.setVida(200);
         raca.setResistenciaMagica(15);
@@ -17,6 +18,7 @@ public class Assassino extends Personagem implements Combate, Constantes{
         raca.setDanoDeHabilidade(40);
         raca.setPoderDeHabilidade(10);
         raca.setVelocidadeDeAtaque(20);
+        
         this.laminaNoturna = 45;
         this.retaDaMorte = 35;
         this.energia = 120;

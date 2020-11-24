@@ -1,7 +1,7 @@
 
 package rpg.poo.model;
 
-public abstract class Raca extends Personagem{
+public class Raca extends Personagem{
         //Atributos da classe Raca
         private String atributo;
         private int vida;
