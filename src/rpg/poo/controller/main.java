@@ -3,7 +3,6 @@ import rpg.poo.model.*;
 import java.util.Scanner;
 
 public class main {
-    public static char escolhido;
     public static void main(String[] args){        
         System.out.println("\nMENU --------------------------------------------\n");
         System.out.println("1 - Novo jogo");
@@ -31,7 +30,6 @@ public class main {
         
         switch(op){
             case 1: Personagem playerA = new Assassino(); 
-                    escolhido = 'A'; 
                     System.out.print("Você criou um assassino. \nnome:"); 
                     
                     input.nextLine();
@@ -40,7 +38,6 @@ public class main {
                     
                     return playerA;
             case 2: Personagem playerG = new Guerreiro(); 
-                    escolhido = 'G'; 
                     System.out.print("Você criou um guerreiro. \nnome:"); 
                     
                     input.nextLine();
@@ -49,7 +46,6 @@ public class main {
                     
                     return playerG;
             case 3: Personagem playerM = new Mago(); 
-                    escolhido = 'M';
                     System.out.print("Você criou um mago. \nnome:"); 
                     
                     input.nextLine();
