@@ -1,11 +1,12 @@
 package rpg.poo.model;
-import rpg.poo.controller.Acoes;
+import rpg.poo.controller.Acao;
 
-public abstract class Personagem implements Acoes{
+public abstract class Personagem implements Acao{
     protected String nome;
     protected int nivel = 1;
     protected int missoesConcluidas = 0;
-    public Raca raca;
+    protected Raca raca;
+    protected Acao acoes;
     
     public void setNome(String nome){
         this.nome = nome;

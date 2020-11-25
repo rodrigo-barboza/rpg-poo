@@ -1,6 +1,6 @@
 package rpg.poo.controller;
 
-public interface Acoes {
+public interface Acao {
     void menu();
     void missoesDoNivel(int nivel);
     void exibeAtributos();

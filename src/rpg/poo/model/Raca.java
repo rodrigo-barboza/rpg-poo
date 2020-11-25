@@ -2,16 +2,15 @@
 package rpg.poo.model;
 
 public class Raca extends Personagem{
-        //Atributos da classe Raca
-        private String atributo;
-        private int vida;
-        private int resistenciaMagica;
-        private int armadura;
-        private int tenacidade;
-        private int danoDeHabilidade;
-        private int poderDeHabilidade;
-        private int velocidadeDeAtaque;
-
+    //Atributos da classe Raca
+    private String atributo;
+    private int vida;
+    private int resistenciaMagica;
+    private int armadura;
+    private int tenacidade;
+    private int danoDeHabilidade;
+    private int poderDeHabilidade;
+    private int velocidadeDeAtaque;
 
     //Getters e Setters dos atributos
     public String getAtributo() {
