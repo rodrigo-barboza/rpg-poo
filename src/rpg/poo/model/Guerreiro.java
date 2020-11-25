@@ -10,6 +10,7 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
     public Guerreiro (){
         raca = new Raca();
         
+        raca.setTipo("Guerreiro");
         raca.setArmadura(12);
         raca.setAtributo("Resistência");
         raca.setDanoDeHabilidade(35);

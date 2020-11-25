@@ -1,9 +1,8 @@
 package rpg.poo.controller;
 
 public interface Acao {
-    void menu();
     void missoesDoNivel(int nivel);
-    void exibeAtributos();
+    String exibeAtributos();
     void missaoCompleta();
     void subiuNivel();
 }

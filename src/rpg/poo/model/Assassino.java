@@ -10,6 +10,7 @@ public class Assassino extends Personagem implements Combate, Constantes{
     public Assassino(){
         raca = new Raca();
         
+        raca.setTipo("Assassino");
         raca.setAtributo("Energia");
         raca.setVida(200);
         raca.setResistenciaMagica(15);

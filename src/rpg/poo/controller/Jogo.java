@@ -1,9 +1,22 @@
 package rpg.poo.controller;
-import rpg.poo.model.*;
 import java.util.Scanner;
+import rpg.poo.controller.Acao;
+import rpg.poo.model.Assassino;
+import rpg.poo.model.Guerreiro;
+import rpg.poo.model.Mago;
+import rpg.poo.model.Personagem;
 
-public class main {
+public class Jogo{
+    protected Personagem[] personagens = new Personagem[3];
+    
+    public void menu(){
+        System.out.println("\nMENU --------------------------------------------\n");
+        System.out.println("1 - Missões"); // chama o método missoesDoNivel()
+        System.out.println("2 - Meus atributos\n"); // chama o método exibeAtributos();
+    }
+    
     public static void main(String[] args){        
+        
         System.out.println("\nMENU --------------------------------------------\n");
         System.out.println("1 - Novo jogo");
         System.out.println("2 - Sair\n");
@@ -12,8 +25,10 @@ public class main {
         int op = input.nextInt();
         
         switch(op){
-            case 1: Personagem esc = criaPersonagem(); 
-                    System.out.println("Nome: "+esc.getNome());
+            case 1: 
+                    Jogo jogo = new Jogo();
+                    jogo.personagens[0] = criaPersonagem();
+                    System.out.println("\n\n\tMeus atributos: "+jogo.personagens[0].exibeAtributos());
                     break;
             case 2: System.exit(1);
         }

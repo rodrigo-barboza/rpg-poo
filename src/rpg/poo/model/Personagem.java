@@ -6,7 +6,6 @@ public abstract class Personagem implements Acao{
     protected int nivel = 1;
     protected int missoesConcluidas = 0;
     protected Raca raca;
-    protected Acao acoes;
     
     public void setNome(String nome){
         this.nome = nome;
@@ -17,20 +16,23 @@ public abstract class Personagem implements Acao{
     }
     
     @Override
-    public void menu(){
-        System.out.println("\nMENU --------------------------------------------\n");
-        System.out.println("1 - Missões"); // chama o método missoesDoNivel()
-        System.out.println("2 - Meus atributos\n"); // chama o método exibeAtributos();
-    }
-    
-    @Override
     public void missoesDoNivel(int nivel){
         // serão listadas as missões para o nível do jogador
     }
     
     @Override
-    public void exibeAtributos(){
+    public String exibeAtributos(){
         // lista todos atributos atuais do jogador
+        return "Nível: "+nivel+
+               "\nMissões concluídas: "+missoesConcluidas+
+                "\nRaça: "+raca.getTipo()+
+                "\nVida: "+raca.getVida()+
+                "\nResistência mágica: "+raca.getResistenciaMagica()+
+                "\nArmadura: "+raca.getArmadura()+
+                "\nTenacidade: "+raca.getTenacidade()+
+                "\nDado de habilidade: "+raca.getDanoDeHabilidade()+
+                "\nPoder de habilidade: "+raca.getPoderDeHabilidade()+
+                "\nVelocidade de ataque: "+raca.getVelocidadeDeAtaque();
     }
     
     @Override
@@ -42,4 +44,5 @@ public abstract class Personagem implements Acao{
     public void subiuNivel(){
         // incrementa o nível do jogador e atualiza os atributos do mesmo
     }
+    
 }

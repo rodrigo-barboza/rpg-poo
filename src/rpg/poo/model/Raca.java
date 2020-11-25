@@ -4,6 +4,7 @@ package rpg.poo.model;
 public class Raca extends Personagem{
     //Atributos da classe Raca
     private String atributo;
+    private String tipo; // qual o tipo da raça (para mostrar)
     private int vida;
     private int resistenciaMagica;
     private int armadura;
@@ -20,6 +21,12 @@ public class Raca extends Personagem{
     public void setAtributo(String atributo) {
         this.atributo = atributo;
     }
+    
+    public void setTipo(String tipo){
+        this.tipo = tipo;
+    }
+    
+    public String getTipo(){ return tipo; }
 
     public int getVida() {
         return vida;
