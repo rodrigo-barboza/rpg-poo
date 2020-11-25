@@ -28,7 +28,7 @@ public class Jogo{
             case 1: 
                     Jogo jogo = new Jogo();
                     jogo.personagens[0] = criaPersonagem();
-                    System.out.println("\n\n\tMeus atributos: "+jogo.personagens[0].exibeAtributos());
+                    System.out.println("\n\n\tMeus Atributos: "+jogo.personagens[0].exibeAtributos());
                     break;
             case 2: System.exit(1);
         }
