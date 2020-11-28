@@ -50,9 +50,7 @@ public abstract class Personagem implements Acao,Constantes{
                 "\nVida: "+raca.getVida()+
                 "\nResistência mágica: "+raca.getResistenciaMagica()+
                 "\nArmadura: "+raca.getArmadura()+
-                "\nTenacidade: "+raca.getTenacidade()+
                 "\nDado de habilidade: "+raca.getDanoDeHabilidade()+
-                "\nPoder de habilidade: "+raca.getPoderDeHabilidade()+
                 "\nVelocidade de ataque: "+raca.getVelocidadeDeAtaque();
     }
     
@@ -75,16 +73,19 @@ public abstract class Personagem implements Acao,Constantes{
             raca.setResistenciaMagica(RES_MAGIC_MAGO+(nivel*CONST_RES_MAGIC_MAGO));
             raca.setArmadura(ARMADURA_MAGO+(nivel*CONST_ARMADURA_MAGO));
             raca.setVelocidadeDeAtaque(VEL_ATQ_MAGO+(nivel*CONST_VEL_ATQ_MAGO));
+            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_MAGO +(nivel*CONST_DANO_DE_HABILIDADE_MAGO));
         }else if(raca.getTipo()=="Guerreiro"){
             raca.setVida(VIDA_GUERREIRO +(nivel*CONST_VIDA_GUERREIRO));
             raca.setResistenciaMagica(RES_MAGIC_GUERREIRO +(nivel*CONST_RES_MAGIC_GUERREIRO));
             raca.setArmadura(ARMADURA_GUERREIRO +(nivel*CONST_ARMADURA_GUERREIRO));
             raca.setVelocidadeDeAtaque(VEL_ATQ_GUERREIRO +(nivel*CONST_VEL_ATQ_GUERREIRO));
+            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_GUERREIRO +(nivel*CONST_DANO_DE_HABILIDADE_GUERREIRO));
         }else if(raca.getTipo()=="Assassino"){
             raca.setVida(VIDA_ASSASSINO +(nivel*CONST_VIDA_ASSASSINO));
             raca.setResistenciaMagica(RES_MAGIC_ASSASSINO +(nivel*CONST_RES_MAGIC_ASSASSINO));
             raca.setArmadura(ARMADURA_ASSASSINO +(nivel*CONST_ARMADURA_ASSASSINO));
             raca.setVelocidadeDeAtaque(VEL_ATQ_ASSASSINO +(nivel*CONST_VEL_ATQ_ASSASSINO));
+            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_ASSASSINO +(nivel*CONST_DANO_DE_HABILIDADE_ASSASSINO));
         }
     }
     
