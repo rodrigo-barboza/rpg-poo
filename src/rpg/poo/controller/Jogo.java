@@ -1,6 +1,5 @@
 package rpg.poo.controller;
 import java.util.Scanner;
-import rpg.poo.controller.Acao;
 import rpg.poo.model.Assassino;
 import rpg.poo.model.Guerreiro;
 import rpg.poo.model.Mago;

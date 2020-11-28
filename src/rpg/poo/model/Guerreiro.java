@@ -34,4 +34,9 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
     public void usarAtaqueBasico (int vidaInimigo){
         
     }
+    
+    @Override
+    public void lutar(int nivel, int missaoEscolhida){
+        
+    }
 }

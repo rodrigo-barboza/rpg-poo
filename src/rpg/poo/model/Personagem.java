@@ -18,6 +18,10 @@ public abstract class Personagem implements Acao{
     @Override
     public void missoesDoNivel(int nivel){
         // serão listadas as missões para o nível do jogador
+        // nível 1 = 3 inimigos
+        // nivel 2 = 4 
+        // nivel 3 = 6
+        // nivel 4 = 8
     }
     
     @Override

@@ -34,4 +34,9 @@ public class Assassino extends Personagem implements Combate, Constantes{
     public void usarAtaqueBasico (int vidaInimigo){
         
     }
+    
+    @Override
+    public void lutar(int nivel, int missaoEscolhida){
+        
+    }
 }
