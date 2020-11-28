@@ -13,10 +13,8 @@ public class Mago extends Personagem implements Combate, Constantes{
         raca.setTipo("Mago");
         raca.setArmadura(ARMADURA_MAGO);
         raca.setAtributo("Mana");
-        raca.setDanoDeHabilidade(40);
-        raca.setPoderDeHabilidade(100);
+        raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_MAGO);
         raca.setResistenciaMagica(RES_MAGIC_MAGO);
-        raca.setTenacidade(0);
         raca.setVelocidadeDeAtaque(VEL_ATQ_MAGO);
         raca.setVida(VIDA_MAGO);
         
