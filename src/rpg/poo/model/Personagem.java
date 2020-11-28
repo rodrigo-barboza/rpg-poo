@@ -26,24 +26,131 @@ public abstract class Personagem implements Acao,Constantes{
         // nivel 3 = 6
         // nivel 4 = 8
         Inimigos inimigos = new Inimigos();
-        //nome_inimigo = get
+        String n1,n2,n3,n4,n5,n6,n7,n8;
         switch(nivel){
             case 1:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                n1 = inimigos.getMissaoIn(nivel);
+                System.out.print("\nMissão 1: "+n1);
+                n2 = inimigos.getMissaoIn(nivel);
+                while(n2.equals(n1)){
+                    n2 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 2: "+n2);
+                n3 = inimigos.getMissaoIn(nivel);
+                while(n3.equals(n2) || n3.equals(n1)){
+                    n3 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 3: "+n3);
                 break;
     
             case 2:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                n1 = inimigos.getMissaoIn(nivel);
+                System.out.print("\nMissão 1: "+n1);
+                
+                n2 = inimigos.getMissaoIn(nivel);
+                while(n2.equals(n1)){
+                    n2 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 2: "+n2);
+                
+                n3 = inimigos.getMissaoIn(nivel);
+                while(n3.equals(n2) || n3.equals(n1)){
+                    n3 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 3: "+n3);
+                
+                n4 = inimigos.getMissaoIn(nivel);
+                while(n4.equals(n1) || n4.equals(n2) || n4.equals(n3)){
+                    n4 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 4: "+n4);
                 break;
                 
             case 3:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                n1 = inimigos.getMissaoIn(nivel);
+                System.out.print("\nMissão 1: "+n1);
+                
+                n2 = inimigos.getMissaoIn(nivel);
+                while(n2.equals(n1)){
+                    n2 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 2: "+n2);
+                
+                n3 = inimigos.getMissaoIn(nivel);
+                while(n3.equals(n2) || n3.equals(n1)){
+                    n3 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 3: "+n3);
+                
+                n4 = inimigos.getMissaoIn(nivel);
+                while(n4.equals(n1) || n4.equals(n2) || n4.equals(n3)){
+                    n4 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 4: "+n4);
+                
+                n5 = inimigos.getMissaoIn(nivel);
+                while(n5.equals(n1) || n5.equals(n2) || n5.equals(n3) || n5.equals(n4)){
+                    n5 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 5: "+n5);
+                
+                n6 = inimigos.getMissaoIn(nivel);
+                while(n6.equals(n1) || n6.equals(n2) || n6.equals(n3) || n6.equals(n4) || n6.equals(n5)){
+                    n6 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 6: "+n6);
                 break;
                 
             case 4:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                n1 = inimigos.getMissaoIn(nivel);
+                System.out.print("\nMissão 1: "+n1);
+                
+                n2 = inimigos.getMissaoIn(nivel);
+                while(n2.equals(n1)){
+                    n2 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 2: "+n2);
+                
+                n3 = inimigos.getMissaoIn(nivel);
+                while(n3.equals(n2) || n3.equals(n1)){
+                    n3 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 3: "+n3);
+                
+                n4 = inimigos.getMissaoIn(nivel);
+                while(n4.equals(n1) || n4.equals(n2) || n4.equals(n3)){
+                    n4 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 4: "+n4);
+                
+                n5 = inimigos.getMissaoIn(nivel);
+                while(n5.equals(n1) || n5.equals(n2) || n5.equals(n3) || n5.equals(n4)){
+                    n5 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 5: "+n5);
+                
+                n6 = inimigos.getMissaoIn(nivel);
+                while(n6.equals(n1) || n6.equals(n2) || n6.equals(n3) || n6.equals(n4) || n6.equals(n5)){
+                    n6 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 6: "+n6);
+                
+                n7 = inimigos.getMissaoIn(nivel);
+                while(n7.equals(n1) || n7.equals(n2) || n7.equals(n3) || n7.equals(n4) || n7.equals(n5) || n7.equals(n6) ){
+                    n7 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 7: "+n7);
+                
+                n8 = inimigos.getMissaoIn(nivel);
+                while(n8.equals(n1) || n8.equals(n2) || n8.equals(n3) || n8.equals(n4) || n8.equals(n5) || n8.equals(n6) || n8.equals(n7) ){
+                    n8 = inimigos.getMissaoIn(nivel);
+                }
+                System.out.print("\nMissão 8: "+n8);
                 break;
-            
         }
         
     }
