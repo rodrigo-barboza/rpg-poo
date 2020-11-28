@@ -67,7 +67,7 @@ public abstract class Personagem implements Acao,Constantes{
     public void missaoCompleta(){
         // incrementa o número de missões concluidas para o jogador e verifica se o mesmo subiu de nível
         missoesConcluidas++;
-        if(missoesConcluidas == 4){
+        if(missoesConcluidas == 3 || missoesConcluidas == 4 || missoesConcluidas == 6 || missoesConcluidas == 8){
             subiuNivel();
         }
     }
