@@ -8,9 +8,7 @@ public class Raca extends Personagem{
     private int vida;
     private int resistenciaMagica;
     private int armadura;
-    private int tenacidade;
     private int danoDeHabilidade;
-    private int poderDeHabilidade;
     private int velocidadeDeAtaque;
 
     //Getters e Setters dos atributos
@@ -52,28 +50,12 @@ public class Raca extends Personagem{
         this.armadura = armadura;
     }
 
-    public int getTenacidade() {
-        return tenacidade;
-    }
-
-    public void setTenacidade(int tenacidade) {
-        this.tenacidade = tenacidade;
-    }
-
     public int getDanoDeHabilidade() {
         return danoDeHabilidade;
     }
 
     public void setDanoDeHabilidade(int danoDeHabilidade) {
         this.danoDeHabilidade = danoDeHabilidade;
-    }
-
-    public int getPoderDeHabilidade() {
-        return poderDeHabilidade;
-    }
-
-    public void setPoderDeHabilidade(int poderDeHabilidade) {
-        this.poderDeHabilidade = poderDeHabilidade;
     }
 
     public int getVelocidadeDeAtaque() {
