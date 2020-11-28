@@ -1,6 +1,7 @@
 package rpg.poo.model;
 import rpg.poo.controller.Acao;
 import rpg.poo.controller.Constantes;
+import rpg.poo.model.inimigos.Inimigos;
 
 
 public abstract class Personagem implements Acao,Constantes{
@@ -24,18 +25,24 @@ public abstract class Personagem implements Acao,Constantes{
         // nivel 2 = 4 
         // nivel 3 = 6
         // nivel 4 = 8
+        Inimigos inimigos = new Inimigos();
+        //nome_inimigo = get
         switch(nivel){
             case 1:
                 System.out.print("Missões do Nível "+nivel + ": ");
-                System.out.print("\n");
+                break;
+    
             case 2:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                break;
                 
             case 3:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                break;
                 
             case 4:
                 System.out.print("Missões do Nível "+nivel + ": ");
+                break;
             
         }
         
