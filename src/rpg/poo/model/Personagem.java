@@ -53,6 +53,7 @@ public abstract class Personagem implements Acao,Constantes{
     @Override
     public void subiuNivel(){
         // incrementa o nível do jogador e atualiza os atributos do mesmo
+        // Falta pro Dano, e pra habilidades para cada Classe
         nivel++;
         if(raca.getTipo()=="Mago"){
             raca.setVida(VIDA_MAGO +(nivel*CONST_VIDA_MAGO));
