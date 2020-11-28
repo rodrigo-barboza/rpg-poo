@@ -24,6 +24,21 @@ public abstract class Personagem implements Acao,Constantes{
         // nivel 2 = 4 
         // nivel 3 = 6
         // nivel 4 = 8
+        switch(nivel){
+            case 1:
+                System.out.print("Missões do Nível "+nivel + ": ");
+                System.out.print("\n");
+            case 2:
+                System.out.print("Missões do Nível "+nivel + ": ");
+                
+            case 3:
+                System.out.print("Missões do Nível "+nivel + ": ");
+                
+            case 4:
+                System.out.print("Missões do Nível "+nivel + ": ");
+            
+        }
+        
     }
     
     @Override
