@@ -14,10 +14,11 @@ public class Inimigos { // PC
     private String tipoIn; // TIPO de dano do inimigo: "fisico" ou "magico"
     //private int velocidadeDeAtaque; // ver se vai botar esse aqui ainda
     
-
+    //nome da fase do inimigo:
+    private String missaoIn;
     
     
-    public void definirInimigo(int nivelDoAventureiro){
+    private void definirInimigo(int nivelDoAventureiro){
         int limite;
         int aleatorio;
         Random rand = new Random();
@@ -203,7 +204,58 @@ public class Inimigos { // PC
                 setResistenciaMagicaIn(9999);
         }
     }
-            //Métodos especiais getters e setters pros atributos dos inimigos
+    
+    public String getMissaoIn(int nivelDoAventureiro) {
+        definirInimigo(nivelDoAventureiro); //Aqui ele já vai escolher o inimigo baseado no nível do jogador
+
+        String nomeMissao = null; // o nome da missão vai ficar aqui
+        if(getNomeIn().equals("Dragao de Fogo")){
+            nomeMissao = "O Covil do Dragao de Fogo";
+            return nomeMissao;
+        }
+        else{
+            // atributos pra pegar uma fase aleatória
+            int aleatorio;
+            Random rand = new Random();
+            aleatorio = rand.nextInt(9);
+            switch(aleatorio){
+                case 0:
+                    nomeMissao = "O Covil do " + getNomeIn();
+                    break;
+                case 1:
+                    nomeMissao = "A Floresta do " + getNomeIn();
+                    break;
+                case 2:
+                    nomeMissao = "O Castelo Ancestral do " + getNomeIn();
+                    break;
+                case 3:
+                    nomeMissao = "A Mansao Amaldicoada do " + getNomeIn();
+                    break;
+                case 4:
+                    nomeMissao = "A Arena do " + getNomeIn();
+                    break;
+                case 5:
+                    nomeMissao = "O Esconderijo do " + getNomeIn();
+                    break;
+                case 6:
+                    nomeMissao = "A academia do " + getNomeIn();
+                    break;
+                case 7:
+                    nomeMissao = "A Rua dominada pelo " + getNomeIn();
+                    break;
+                case 8:
+                    nomeMissao = "A Montanha tomada pelo " + getNomeIn();
+                    break;    
+                default:
+                    nomeMissao = "O vazio do " + getNomeIn();
+            }
+        }
+        return nomeMissao;
+    }
+
+    
+    
+    //Métodos especiais getters e setters pros atributos dos inimigos
     public int getVidaIn() {
         return vidaIn;
     }
@@ -250,6 +302,10 @@ public class Inimigos { // PC
 
     public void setNomeIn(String nomeIn) {
         this.nomeIn = nomeIn;
+    }
+
+    public void setMissaoIn(String missaoIn) {
+        this.missaoIn = missaoIn;
     }
     
 }

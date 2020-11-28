@@ -13,10 +13,8 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
         raca.setTipo("Guerreiro");
         raca.setArmadura(ARMADURA_GUERREIRO);
         raca.setAtributo("Resistência");
-        raca.setDanoDeHabilidade(35);
-        raca.setPoderDeHabilidade(0);
+        raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_GUERREIRO);
         raca.setResistenciaMagica(RES_MAGIC_GUERREIRO);
-        raca.setTenacidade(45);
         raca.setVelocidadeDeAtaque(VEL_ATQ_GUERREIRO);
         raca.setVida(VIDA_GUERREIRO);
         

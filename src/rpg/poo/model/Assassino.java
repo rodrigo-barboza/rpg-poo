@@ -15,9 +15,7 @@ public class Assassino extends Personagem implements Combate, Constantes{
         raca.setVida(VIDA_ASSASSINO);
         raca.setResistenciaMagica(RES_MAGIC_ASSASSINO);
         raca.setArmadura(ARMADURA_ASSASSINO);
-        raca.setTenacidade(10);
-        raca.setDanoDeHabilidade(40);
-        raca.setPoderDeHabilidade(10);
+        raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_ASSASSINO);
         raca.setVelocidadeDeAtaque(VEL_ATQ_ASSASSINO);
         
         this.laminaNoturna = LAMINA_NOTURNA;
