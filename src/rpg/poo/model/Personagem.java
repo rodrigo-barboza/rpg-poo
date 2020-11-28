@@ -47,7 +47,6 @@ public abstract class Personagem implements Acao, Constantes{
     
     @Override
     public void subiuNivel(){
-        raca.setArmadura(VIDA_MAX);
         // incrementa o nível do jogador e atualiza os atributos do mesmo
     }
     
