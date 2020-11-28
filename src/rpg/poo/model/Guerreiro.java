@@ -11,18 +11,18 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
         raca = new Raca();
         
         raca.setTipo("Guerreiro");
-        raca.setArmadura(12);
+        raca.setArmadura(ARMADURA_GUERREIRO);
         raca.setAtributo("Resistência");
         raca.setDanoDeHabilidade(35);
         raca.setPoderDeHabilidade(0);
-        raca.setResistenciaMagica(30);
+        raca.setResistenciaMagica(RES_MAGIC_GUERREIRO);
         raca.setTenacidade(45);
-        raca.setVelocidadeDeAtaque(10);
-        raca.setVida(300);
+        raca.setVelocidadeDeAtaque(VEL_ATQ_GUERREIRO);
+        raca.setVida(VIDA_GUERREIRO);
         
-        escudoDePedra = 20;
-        investidaMilagrosa = 30;
-        furia = 40;
+        escudoDePedra = ESCUDO_DE_PEDRA;
+        investidaMilagrosa = INVESTIDA_MILAGROSA;
+        furia = FURIA;
     }
     
     @Override
@@ -32,6 +32,11 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
     
     @Override
     public void usarAtaqueBasico (int vidaInimigo){
+        
+    }
+    
+    @Override
+    public void lutar(int nivel, int missaoEscolhida){
         
     }
 }

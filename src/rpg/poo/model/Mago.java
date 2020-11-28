@@ -11,18 +11,18 @@ public class Mago extends Personagem implements Combate, Constantes{
         raca = new Raca();
         
         raca.setTipo("Mago");
-        raca.setArmadura(10);
+        raca.setArmadura(ARMADURA_MAGO);
         raca.setAtributo("Mana");
         raca.setDanoDeHabilidade(40);
         raca.setPoderDeHabilidade(100);
-        raca.setResistenciaMagica(20);
+        raca.setResistenciaMagica(RES_MAGIC_MAGO);
         raca.setTenacidade(0);
-        raca.setVelocidadeDeAtaque(5);
-        raca.setVida(175);
+        raca.setVelocidadeDeAtaque(VEL_ATQ_MAGO);
+        raca.setVida(VIDA_MAGO);
         
-        impetoGlorioso = 60;
-        outraDimensao = 80;
-        mana = 100;
+        impetoGlorioso = IMPETO_GLORIOSO;
+        outraDimensao = OUTRA_DIMENSAO;
+        mana = MANA;
     }
     
     @Override
@@ -32,6 +32,11 @@ public class Mago extends Personagem implements Combate, Constantes{
     
     @Override
     public void usarAtaqueBasico (int vidaInimigo){
+        
+    }
+    
+    @Override
+    public void lutar(int nivel, int missaoEscolhida){
         
     }
 }
