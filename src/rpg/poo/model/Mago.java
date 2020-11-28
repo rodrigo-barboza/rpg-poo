@@ -39,4 +39,9 @@ public class Mago extends Personagem implements Combate, Constantes{
     public void lutar(int nivel, int missaoEscolhida){
         
     }
+    
+    @Override
+    public void subiuNivel(){
+        
+    }
 }

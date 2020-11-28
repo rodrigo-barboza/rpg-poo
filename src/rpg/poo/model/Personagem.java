@@ -1,7 +1,8 @@
 package rpg.poo.model;
 import rpg.poo.controller.Acao;
+import rpg.poo.controller.Constantes;
 
-public abstract class Personagem implements Acao{
+public abstract class Personagem implements Acao, Constantes{
     protected String nome;
     protected int nivel = 1;
     protected int missoesConcluidas = 0;
@@ -46,6 +47,7 @@ public abstract class Personagem implements Acao{
     
     @Override
     public void subiuNivel(){
+        raca.setArmadura(VIDA_MAX);
         // incrementa o nível do jogador e atualiza os atributos do mesmo
     }
     
