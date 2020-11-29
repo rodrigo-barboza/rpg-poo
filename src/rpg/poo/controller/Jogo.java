@@ -3,71 +3,155 @@ import java.util.Scanner;
 import rpg.poo.model.Assassino;
 import rpg.poo.model.Guerreiro;
 import rpg.poo.model.Mago;
-import rpg.poo.model.Personagem;
 
 public class Jogo{
-    protected Personagem[] personagens = new Personagem[3];
+    protected Assassino assassino;
+    protected Guerreiro guerreiro;
+    protected Mago mago;
+    protected int numPersonagens = -1;
     
-    public void menu(){
+    public void menuJogo(Assassino player){
         System.out.println("\nMENU --------------------------------------------\n");
         System.out.println("1 - Missões"); // chama o método missoesDoNivel()
-        System.out.println("2 - Meus atributos\n"); // chama o método exibeAtributos();
-    }
-    
-    public static void main(String[] args){        
-        
-        System.out.println("\nMENU --------------------------------------------\n");
-        System.out.println("1 - Novo jogo");
-        System.out.println("2 - Sair\n");
+        System.out.println("2 - Meus atributos"); // chama o método exibeAtributos();
+        System.out.println("3 - Voltar para o menu principal\n");
         
         Scanner input = new Scanner(System.in);
         int op = input.nextInt();
         
         switch(op){
             case 1: 
-                    Jogo jogo = new Jogo();
-                    jogo.personagens[0] = criaPersonagem();
-                    System.out.println("\n\n\tMeus Atributos: "+jogo.personagens[0].exibeAtributos());
+                    String missaoEscolhida = player.missoesDoNivel();
+                    player.iniciarMissao(missaoEscolhida);
+                    menuJogo(player);
                     break;
-            case 2: System.exit(1);
+            case 2: player.exibeAtributos(); 
+                    menuPrincipal(); break;
+            case 3: menuPrincipal();
         }
+        
     }
     
-    public static Personagem criaPersonagem(){
-        System.out.println("\nESCOLHA A SUA CLASSE-----------------------------\n");
-        System.out.println("1 - Assassino");
-        System.out.println("2 - Guerreiro");
-        System.out.println("3 - Mago\n");
+    public void menuJogo(Guerreiro player){
+        System.out.println("\nMENU --------------------------------------------\n");
+        System.out.println("1 - Missões"); // chama o método missoesDoNivel()
+        System.out.println("2 - Meus atributos"); // chama o método exibeAtributos();
+        System.out.println("3 - Voltar para o menu principal\n");
         
         Scanner input = new Scanner(System.in);
         int op = input.nextInt();
         
         switch(op){
-            case 1: Personagem playerA = new Assassino(); 
+            case 1: String missaoEscolhida = player.missoesDoNivel();
+                    //persona
+                    break;
+            case 2: player.exibeAtributos(); 
+                    menuPrincipal(); break;
+            case 3: menuPrincipal();
+        }
+        
+    }
+    
+    public void menuJogo(Mago player){
+        System.out.println("\nMENU --------------------------------------------\n");
+        System.out.println("1 - Missões"); // chama o método missoesDoNivel()
+        System.out.println("2 - Meus atributos"); // chama o método exibeAtributos();
+        System.out.println("3 - Voltar para o menu principal\n");
+        
+        Scanner input = new Scanner(System.in);
+        int op = input.nextInt();
+        
+        switch(op){
+            case 1: String missaoEscolhida = player.missoesDoNivel();
+                    //persona
+                    break;
+            case 2: player.exibeAtributos(); 
+                    menuPrincipal(); break;
+            case 3: menuPrincipal();
+        }
+        
+    }
+    
+    /*public void voltarMenuJogo(){
+        System.out.println("Deseja voltar ao menu do jogo? ");
+        System.out.println("1 - Sim / 2 - Não\n");
+        
+        Scanner input = new Scanner(System.in);
+        int op = input.nextInt();
+        
+        if (op == 1) menuJogo(playerM);
+        else menuPrincipal();        
+    }
+    */
+    public static void criaPersonagem(){
+        Jogo jogo = new Jogo();
+        jogo.numPersonagens++;
+        
+        System.out.println("\nESCOLHA A SUA CLASSE-----------------------------\n");
+        System.out.println("1 - Assassino");
+        System.out.println("2 - Guerreiro");
+        System.out.println("3 - Mago");
+        System.out.println("4 - Voltar para o menu principal\n");
+        
+        Scanner input = new Scanner(System.in);
+        int op = input.nextInt();
+        
+        switch(op){
+            case 1: Assassino playerA = new Assassino(); 
                     System.out.print("Você criou um assassino. \nnome:"); 
                     
                     input.nextLine();
                     String nomeA = input.nextLine();
                     playerA.setNome(nomeA);   
                     
-                    return playerA;
-            case 2: Personagem playerG = new Guerreiro(); 
+                    jogo.assassino = playerA;
+                    jogo.menuJogo(playerA);
+                    
+                    break;
+            case 2: Guerreiro playerG = new Guerreiro(); 
                     System.out.print("Você criou um guerreiro. \nnome:"); 
                     
                     input.nextLine();
                     String nomeG = input.nextLine();
                     playerG.setNome(nomeG); 
                     
-                    return playerG;
-            case 3: Personagem playerM = new Mago(); 
+                    jogo.guerreiro = playerG;
+                    jogo.menuJogo(playerG);
+                    
+                    break;
+            case 3: Mago playerM = new Mago(); 
                     System.out.print("Você criou um mago. \nnome:"); 
                     
                     input.nextLine();
                     String nomeM = input.nextLine();
                     playerM.setNome(nomeM); 
                     
-                    return playerM;
-            default: System.out.println("\n\tOpção inválida. "); return null;
+                    jogo.mago = playerM;
+                    jogo.menuJogo(playerM);
+                    
+                    break;
+            case 4: menuPrincipal(); 
+            default: System.out.println("\n\tOpção inválida. "); menuPrincipal(); 
         }
+    }
+    
+    public static void menuPrincipal (){
+        System.out.println("\nMENU --------------------------------------------\n");
+        System.out.println("1 - Novo jogo");
+        System.out.println("2 - Sair\n");
+
+        Scanner input = new Scanner(System.in);
+        int op = input.nextInt();
+        
+        switch(op){
+            case 1: 
+                   criaPersonagem();                    
+                   break;
+            case 2: break;
+        }
+    }
+    
+     public static void main(String[] args){        
+        menuPrincipal();
     }
 }

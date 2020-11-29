@@ -253,8 +253,6 @@ public class Inimigos { // PC
         return nomeMissao;
     }
 
-    
-    
     //Métodos especiais getters e setters pros atributos dos inimigos
     public int getVidaIn() {
         return vidaIn;

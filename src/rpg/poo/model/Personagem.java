@@ -2,13 +2,14 @@ package rpg.poo.model;
 import rpg.poo.controller.Acao;
 import rpg.poo.controller.Constantes;
 import rpg.poo.model.inimigos.Inimigos;
-
+import java.util.Scanner;
 
 public abstract class Personagem implements Acao,Constantes{
     protected String nome;
     protected int nivel = 1;
     protected int missoesConcluidas = 0;
     protected Raca raca;
+    protected Inimigos inimigo;
     
     public void setNome(String nome){
         this.nome = nome;
@@ -19,7 +20,7 @@ public abstract class Personagem implements Acao,Constantes{
     }
     
     @Override
-    public void missoesDoNivel(int nivel){
+    public String missoesDoNivel(){
         // serão listadas as missões para o nível do jogador
         // nível 1 = 3 inimigos
         // nivel 2 = 4 
@@ -27,9 +28,12 @@ public abstract class Personagem implements Acao,Constantes{
         // nivel 4 = 8
         Inimigos inimigos = new Inimigos();
         String n1,n2,n3,n4,n5,n6,n7,n8;
+        n1 = n2 = n3 = n4 = n5 = n6 = n7 = n8 = "void";
+        inimigo = inimigos;
+        
         switch(nivel){
             case 1:
-                System.out.print("Missões do Nível "+nivel + ": ");
+                System.out.println("Missões do Nível "+nivel + ": ");
                 n1 = inimigos.getMissaoIn(nivel);
                 System.out.print("\nMissão 1: "+n1);
                 n2 = inimigos.getMissaoIn(nivel);
@@ -153,6 +157,51 @@ public abstract class Personagem implements Acao,Constantes{
                 break;
         }
         
+        System.out.print("\n\n\t=> ");
+        
+        Scanner input = new Scanner(System.in);
+        int missao = input.nextInt();
+        
+        switch(nivel){
+            case 1:
+                switch(missao){
+                    case 1: return n1;
+                    case 2: return n2;
+                    case 3: return n3;
+                } 
+                break;
+            case 2:
+                switch(missao){
+                    case 1: return n1;
+                    case 2: return n2;
+                    case 3: return n3;
+                    case 4: return n4;
+                } 
+                break;
+            case 3:
+                switch(missao){
+                    case 1: return n1;
+                    case 2: return n2;
+                    case 3: return n3;
+                    case 4: return n4;
+                    case 5: return n5;
+                    case 6: return n6;
+                } 
+                break;
+            case 4: 
+                switch(missao){
+                    case 1: return n1;
+                    case 2: return n2;
+                    case 3: return n3;
+                    case 4: return n4;
+                    case 5: return n5;
+                    case 6: return n6;
+                    case 7: return n7;
+                    case 8: return n8;
+                } 
+                break;
+        }
+        return "void"; // só pra a frescura do java parar de arretar
     }
     
     @Override
@@ -160,12 +209,12 @@ public abstract class Personagem implements Acao,Constantes{
         // lista todos atributos atuais do jogador
         return "Nível: "+nivel+
                "\nMissões concluídas: "+missoesConcluidas+
-                "\nRaça: "+raca.getTipo()+
-                "\nVida: "+raca.getVida()+
-                "\nResistência mágica: "+raca.getResistenciaMagica()+
-                "\nArmadura: "+raca.getArmadura()+
-                "\nDado de habilidade: "+raca.getDanoDeHabilidade()+
-                "\nVelocidade de ataque: "+raca.getVelocidadeDeAtaque();
+               "\nRaça: "+raca.getTipo()+
+               "\nVida: "+raca.getVida()+
+               "\nResistência mágica: "+raca.getResistenciaMagica()+
+               "\nArmadura: "+raca.getArmadura()+
+               "\nDado de habilidade: "+raca.getDanoDeHabilidade()+
+               "\nVelocidade de ataque: "+raca.getVelocidadeDeAtaque();
     }
     
     @Override
@@ -182,7 +231,7 @@ public abstract class Personagem implements Acao,Constantes{
         // incrementa o nível do jogador e atualiza os atributos do mesmo
         // Falta pro Dano, e pra habilidades para cada Classe
         nivel++;
-        if(raca.getTipo()=="Mago"){
+        if(raca.getTipo() == "Mago"){
             raca.setVida(VIDA_MAGO +(nivel*CONST_VIDA_MAGO));
             raca.setResistenciaMagica(RES_MAGIC_MAGO+(nivel*CONST_RES_MAGIC_MAGO));
             raca.setArmadura(ARMADURA_MAGO+(nivel*CONST_ARMADURA_MAGO));

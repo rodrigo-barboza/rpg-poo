@@ -1,7 +1,10 @@
 package rpg.poo.controller;
 
 public interface Combate { // RD
-    void lutar(int nivel, int missaoEscolhida);
-    void usarHabilidadeEspecial(int danoDaHabilidade, int vidaInimigo);
-    void usarAtaqueBasico(int vidaInimigo);
+    void iniciarMissao(String missaoEscolhida);
+    int ataqueInimigo(int vida);
+    void defenderAtaqueInimigo();
+    int usarHabilidadeEspecial(int danoDaHabilidade, int vidaInimigo);
+    int usarAtaqueBasico(int vidaInimigo);
+    void escolherAcao();
 }
