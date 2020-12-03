@@ -75,47 +75,56 @@ public class Guerreiro extends Personagem implements Constantes, Combate{
         Random rand = new Random();
         turno = rand.nextInt(2)+1;
         
-        while (vida < 0 || vidaInimigo < 0){
-            if (turno == 1) {
-                System.out.println("--------------------------------------------------------------------------------------------");
-                System.out.println(super.nome+": "+vida+" vs "+inimigo.getNomeIn()+": "+vidaInimigo);
-                System.out.println("Atributos do inimigo: Resistência Mágica ["+inimigo.getResistenciaMagicaIn()+"] / Armadura: ["+inimigo.getArmaduraIn()+"]/ Dano: ["+inimigo.getDanoDeHabilidade()+"]");
-                System.out.println("--------------------------------------------------------------------------------------------");
-                
-                escolherAcao();
-                                
-                Scanner input = new Scanner(System.in);
-                int escolha = input.nextInt();
-                
-                vidaInimigoOld = vidaInimigo;
-                
-                switch(escolha){
-                    //int danoHabilidadeEspecial, int vidaInimigo
-                    case 1: vidaInimigo = usarAtaqueBasico(vidaInimigo); 
-                            ThreadCombate iteratorA = new ThreadCombate("Ataque básico", inimigo.getNomeIn(), super.nome, (rand.nextInt(750)+780), (vidaInimigoOld-vidaInimigo), turno);
-                            break;
-                    case 2: vidaInimigo = usarHabilidadeEspecial(escudoDePedra, vidaInimigo); 
-                            energiaAtual -= escudoDePedraFuria;
-                            ThreadCombate iteratorB = new ThreadCombate("Escudo de Pedra", inimigo.getNomeIn(), super.nome, (rand.nextInt(850)+700), (vidaInimigoOld-vidaInimigo), turno);
-                            break;
-                    case 3: vidaInimigo = usarHabilidadeEspecial(investidaMilagrosa, vidaInimigo); 
-                            energiaAtual -= investidaMilagrosaFuria;
-                            ThreadCombate iteratorC = new ThreadCombate("Investida Milagrosa", inimigo.getNomeIn(), super.nome, (rand.nextInt(950)+800), (vidaInimigoOld-vidaInimigo), turno);
-                            break;
-                    case 4: acaoDefesa = true;
-                    default: System.out.println("Perdeu a vez!");
-                }
-            } else {
-                if (!acaoDefesa){
-                    vida = ataqueInimigo(vida);
+        while (vida >= 0 || vidaInimigo >= 0){
+            if (vidaInimigo <= 0 || vida <= 0) break;
+            else {
+                if (turno == 1) {
+                    System.out.println("--------------------------------------------------------------------------------------------");
+                    System.out.println(super.nome+": "+vida+" vs "+inimigo.getNomeIn()+": "+vidaInimigo);
+                    System.out.println("Atributos do inimigo: Resistência Mágica ["+inimigo.getResistenciaMagicaIn()+"] / Armadura: ["+inimigo.getArmaduraIn()+"]/ Dano: ["+inimigo.getDanoDeHabilidade()+"]");
+                    System.out.println("--------------------------------------------------------------------------------------------");
+
+                    escolherAcao();
+
+                    Scanner input = new Scanner(System.in);
+                    int escolha = input.nextInt();
+
+                    vidaInimigoOld = vidaInimigo;
+
+                    switch(escolha){
+                        //int danoHabilidadeEspecial, int vidaInimigo
+                        case 1: vidaInimigo = usarAtaqueBasico(vidaInimigo); 
+                                ThreadCombate iteratorA = new ThreadCombate("Ataque básico", inimigo.getNomeIn(), super.nome, (rand.nextInt(750)+780), (vidaInimigoOld-vidaInimigo), turno);
+                                break;
+                        case 2: vidaInimigo = usarHabilidadeEspecial(escudoDePedra, vidaInimigo); 
+                                energiaAtual -= escudoDePedraFuria;
+                                ThreadCombate iteratorB = new ThreadCombate("Escudo de Pedra", inimigo.getNomeIn(), super.nome, (rand.nextInt(850)+700), (vidaInimigoOld-vidaInimigo), turno);
+                                break;
+                        case 3: vidaInimigo = usarHabilidadeEspecial(investidaMilagrosa, vidaInimigo); 
+                                energiaAtual -= investidaMilagrosaFuria;
+                                ThreadCombate iteratorC = new ThreadCombate("Investida Milagrosa", inimigo.getNomeIn(), super.nome, (rand.nextInt(950)+800), (vidaInimigoOld-vidaInimigo), turno);
+                                break;
+                        case 4: acaoDefesa = true;
+                        default: System.out.println("Perdeu a vez!");
+                    }
+
+                    turno = 2;
                 } else {
-                    defenderAtaqueInimigo();
-                    ThreadCombate iteratorD = new ThreadCombate("void", inimigo.getNomeIn(), super.nome, (rand.nextInt(500)+100), 0, 3);
+                    if (!acaoDefesa){
+                        vida = ataqueInimigo(vida);
+                    } else {
+                        defenderAtaqueInimigo();
+                        ThreadCombate iteratorD = new ThreadCombate("void", inimigo.getNomeIn(), super.nome, (rand.nextInt(500)+100), 0, 3);
+                    }
+                    turno = 1;
                 }
             }
         }
         
         if (vida > vidaInimigo){
+            //String ataque, String nomeInimigo, String nome, int tempo, int danoCausado, int turno)
+            ThreadCombate iteratorN = new ThreadCombate("", "", "", 3000, 0, 3);
+            iteratorN.run();
             System.out.println("\n\tVitória!");
             int nivelAnterior = nivel;
             super.missaoCompleta();

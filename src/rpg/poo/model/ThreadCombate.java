@@ -35,6 +35,6 @@ public class ThreadCombate extends Thread{
             Logger.getLogger(ThreadCombate.class.getName()).log(Level.SEVERE, null, error);
         }
         if (turno == 1) System.out.println ("Sua vez de atacar!");
-        else System.out.println("Vez de "+nomeInimigo+" atacar, prepare-se!");
+        else if (turno == 2) System.out.println("Vez de "+nomeInimigo+" atacar, prepare-se!");
     }
 }

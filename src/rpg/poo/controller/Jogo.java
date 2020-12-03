@@ -22,14 +22,14 @@ public class Jogo{
         switch(op){
             case 1: 
                     String missaoEscolhida = player.missoesDoNivel();
+                    //String missaoEscolhida = null;
                     player.iniciarMissao(missaoEscolhida);
                     menuJogo(player);
                     break;
-            case 2: player.exibeAtributos(); 
-                    menuPrincipal(); break;
+            case 2: System.out.println(player.exibeAtributos());
+                    menuJogo(player); break;
             case 3: menuPrincipal();
         }
-        
     }
     
     public void menuJogo(Guerreiro player){
@@ -43,10 +43,12 @@ public class Jogo{
         
         switch(op){
             case 1: String missaoEscolhida = player.missoesDoNivel();
+                    player.iniciarMissao(missaoEscolhida);
+                    menuJogo(player);
                     //persona
                     break;
-            case 2: player.exibeAtributos(); 
-                    menuPrincipal(); break;
+            case 2: System.out.println(player.exibeAtributos());
+                    menuJogo(player); break;
             case 3: menuPrincipal();
         }
         
@@ -63,10 +65,12 @@ public class Jogo{
         
         switch(op){
             case 1: String missaoEscolhida = player.missoesDoNivel();
+                    player.iniciarMissao(missaoEscolhida);
+                    menuJogo(player);
                     //persona
                     break;
-            case 2: player.exibeAtributos(); 
-                    menuPrincipal(); break;
+            case 2: System.out.println(player.exibeAtributos()); 
+                    menuJogo(player); break;
             case 3: menuPrincipal();
         }
         
@@ -105,7 +109,7 @@ public class Jogo{
                     playerA.setNome(nomeA);   
                     
                     jogo.assassino = playerA;
-                    jogo.menuJogo(playerA);
+                    jogo.menuJogo(jogo.assassino);
                     
                     break;
             case 2: Guerreiro playerG = new Guerreiro(); 
@@ -116,7 +120,7 @@ public class Jogo{
                     playerG.setNome(nomeG); 
                     
                     jogo.guerreiro = playerG;
-                    jogo.menuJogo(playerG);
+                    jogo.menuJogo(jogo.guerreiro);
                     
                     break;
             case 3: Mago playerM = new Mago(); 
@@ -127,7 +131,7 @@ public class Jogo{
                     playerM.setNome(nomeM); 
                     
                     jogo.mago = playerM;
-                    jogo.menuJogo(playerM);
+                    jogo.menuJogo(jogo.mago);
                     
                     break;
             case 4: menuPrincipal(); 

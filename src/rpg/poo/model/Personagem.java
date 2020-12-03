@@ -4,7 +4,7 @@ import rpg.poo.controller.Constantes;
 import rpg.poo.model.inimigos.Inimigos;
 import java.util.Scanner;
 
-public abstract class Personagem implements Acao,Constantes{
+public abstract class Personagem implements Acao, Constantes{
     protected String nome;
     protected int nivel = 1;
     protected int missoesConcluidas = 0;
@@ -221,35 +221,38 @@ public abstract class Personagem implements Acao,Constantes{
     public void missaoCompleta(){
         // incrementa o número de missões concluidas para o jogador e verifica se o mesmo subiu de nível
         missoesConcluidas++;
-        if(missoesConcluidas == 3 || missoesConcluidas == 4 || missoesConcluidas == 6 || missoesConcluidas == 8){
-            subiuNivel();
+        if(missoesConcluidas == 3 || missoesConcluidas == 7 || missoesConcluidas == 13 || missoesConcluidas == 21){
+            //subiuNivel();
+            nivel++;
+            
+            if(raca.getTipo() == "Mago"){
+                raca.setVida(VIDA_MAGO +(nivel*CONST_VIDA_MAGO));
+                raca.setResistenciaMagica(RES_MAGIC_MAGO+(nivel*CONST_RES_MAGIC_MAGO));
+                raca.setArmadura(ARMADURA_MAGO+(nivel*CONST_ARMADURA_MAGO));
+                raca.setVelocidadeDeAtaque(VEL_ATQ_MAGO+(nivel*CONST_VEL_ATQ_MAGO));
+                raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_MAGO +(nivel*CONST_DANO_DE_HABILIDADE_MAGO));
+            }else if(raca.getTipo()=="Guerreiro"){
+                raca.setVida(VIDA_GUERREIRO +(nivel*CONST_VIDA_GUERREIRO));
+                raca.setResistenciaMagica(RES_MAGIC_GUERREIRO +(nivel*CONST_RES_MAGIC_GUERREIRO));
+                raca.setArmadura(ARMADURA_GUERREIRO +(nivel*CONST_ARMADURA_GUERREIRO));
+                raca.setVelocidadeDeAtaque(VEL_ATQ_GUERREIRO +(nivel*CONST_VEL_ATQ_GUERREIRO));
+                raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_GUERREIRO +(nivel*CONST_DANO_DE_HABILIDADE_GUERREIRO));
+            }else if(raca.getTipo()=="Assassino"){
+                raca.setVida(VIDA_ASSASSINO +(nivel*CONST_VIDA_ASSASSINO));
+                raca.setResistenciaMagica(RES_MAGIC_ASSASSINO +(nivel*CONST_RES_MAGIC_ASSASSINO));
+                raca.setArmadura(ARMADURA_ASSASSINO +(nivel*CONST_ARMADURA_ASSASSINO));
+                raca.setVelocidadeDeAtaque(VEL_ATQ_ASSASSINO +(nivel*CONST_VEL_ATQ_ASSASSINO));
+                raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_ASSASSINO +(nivel*CONST_DANO_DE_HABILIDADE_ASSASSINO));
+            }
         }
     }
     
     @Override
     public void subiuNivel(){
+        System.out.println("ENTROU NESSA PORRA????????");
         // incrementa o nível do jogador e atualiza os atributos do mesmo
         // Falta pro Dano, e pra habilidades para cada Classe
-        nivel++;
-        if(raca.getTipo() == "Mago"){
-            raca.setVida(VIDA_MAGO +(nivel*CONST_VIDA_MAGO));
-            raca.setResistenciaMagica(RES_MAGIC_MAGO+(nivel*CONST_RES_MAGIC_MAGO));
-            raca.setArmadura(ARMADURA_MAGO+(nivel*CONST_ARMADURA_MAGO));
-            raca.setVelocidadeDeAtaque(VEL_ATQ_MAGO+(nivel*CONST_VEL_ATQ_MAGO));
-            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_MAGO +(nivel*CONST_DANO_DE_HABILIDADE_MAGO));
-        }else if(raca.getTipo()=="Guerreiro"){
-            raca.setVida(VIDA_GUERREIRO +(nivel*CONST_VIDA_GUERREIRO));
-            raca.setResistenciaMagica(RES_MAGIC_GUERREIRO +(nivel*CONST_RES_MAGIC_GUERREIRO));
-            raca.setArmadura(ARMADURA_GUERREIRO +(nivel*CONST_ARMADURA_GUERREIRO));
-            raca.setVelocidadeDeAtaque(VEL_ATQ_GUERREIRO +(nivel*CONST_VEL_ATQ_GUERREIRO));
-            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_GUERREIRO +(nivel*CONST_DANO_DE_HABILIDADE_GUERREIRO));
-        }else if(raca.getTipo()=="Assassino"){
-            raca.setVida(VIDA_ASSASSINO +(nivel*CONST_VIDA_ASSASSINO));
-            raca.setResistenciaMagica(RES_MAGIC_ASSASSINO +(nivel*CONST_RES_MAGIC_ASSASSINO));
-            raca.setArmadura(ARMADURA_ASSASSINO +(nivel*CONST_ARMADURA_ASSASSINO));
-            raca.setVelocidadeDeAtaque(VEL_ATQ_ASSASSINO +(nivel*CONST_VEL_ATQ_ASSASSINO));
-            raca.setDanoDeHabilidade(DANO_DE_HABILIDADE_ASSASSINO +(nivel*CONST_DANO_DE_HABILIDADE_ASSASSINO));
-        }
+        
     }
     
 }
